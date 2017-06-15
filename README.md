@@ -30,3 +30,14 @@ function solution(N) {
     }, 0);
 }
 ```
+
+## Last interview question
+
+Given phone number in the format
+
+```javascript
+0191265784 23:45
+0166187465 45:78
+```
+
+Get the complete time of all phone calls and add up the phone number.
