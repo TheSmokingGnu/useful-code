@@ -41,3 +41,25 @@ Given phone number in the format
 ```
 
 Get the complete time of all phone calls and add up the phone number.
+
+## String function
+
+```javascript
+ split(' ') // Turn into array spliting on spaces
+
+```
+
+## Array functions
+
+```javascript
+join(' ') // join with a space
+map((value, index, array)=> {})
+filter((element, index, array) => {})
+reduce((acc, value, index, array)=> {})
+```
+
+## Return an odd number
+
+```javascript
+const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+```
