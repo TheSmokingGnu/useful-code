@@ -63,3 +63,92 @@ reduce((acc, value, index, array)=> {})
 ```javascript
 const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
 ```
+
+## Permutations
+
+```javascript
+function permute(permutation) {
+  const result = [permutation.slice()];
+  const c = new Array(permutation.length).fill(0);
+  const i = 1;
+
+  while (i < permutation.length) {
+    if (c[i] < i) {
+      const k = i % 2 && c[i];
+      const p = permutation[i];
+      permutation[i] = permutation[k];
+      permutation[k] = p;
+      ++c[i];
+      i = 1;
+      result.push(permutation.slice());
+    } else {
+      c[i] = 0;
+      ++i;
+    }
+  }
+  return result;
+}
+
+
+function middlePermutation(s) {
+  const permitations = permute(s.split(''));
+  const allCombos = permitations.map(value => value.join('')).sort();
+  
+  return median(allCombos.length);
+  
+  return allCombos[median(allCombos.length)];
+}
+
+function permute(permutation) {
+  var length = permutation.length,
+      result = [permutation.slice()],
+      c = new Array(length).fill(0),
+      i = 1, k, p;
+
+  while (i < length) {
+    if (c[i] < i) {
+      k = i % 2 && c[i];
+      p = permutation[i];
+      permutation[i] = permutation[k];
+      permutation[k] = p;
+      ++c[i];
+      i = 1;
+      result.push(permutation.slice());
+    } else {
+      c[i] = 0;
+      ++i;
+    }
+  }
+  return result;
+}
+
+function median(value) {
+  return Math.ceil(value / 2);
+}
+```
+
+### Sum
+
+```javascript
+const array = [1,2,3,4];
+
+array.reduce((sum, current) => sum + current, 0)
+
+```
+
+### For loop
+
+```javascript
+for(let index = 0; index < array.length; index++) {
+  // do something
+}
+```
+
+### Intersection of two sets
+
+```javascript
+const aSet = new Set(canBeMod)
+    const bSet = new Set(canMod);
+    
+    return new Set([...aSet].filter(x => bSet.has(x))).size;
+```
